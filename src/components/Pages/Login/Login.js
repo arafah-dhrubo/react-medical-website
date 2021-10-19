@@ -13,9 +13,10 @@ const Login = () => {
 
   const handleLogin = e => {
     e.preventDefault()
-      handleSignInUser(email, password).then(result => {
-      history.push(redirect_url)
-    })
+    handleSignInUser(email, password)
+      .then(result => {
+        history.push(redirect_url)
+    }) .catch(err=>alert(err.message))
   }
   const handleGoogleLogin = () => {
       handleGoogleSignIn().then(result => {

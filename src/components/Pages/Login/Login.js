@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/fc'
 import { useAuth } from '../../../hooks/useAuth'
 
 const Login = () => {
+
   const history = useHistory()
   const location = useLocation()
   const redirect_url = location.state?.from || '/'
@@ -16,15 +17,16 @@ const Login = () => {
     handleSignInUser(email, password)
       .then(result => {
         history.push(redirect_url)
+        window.location.reload()
     }) .catch(err=>alert(err.message))
   }
+
   const handleGoogleLogin = () => {
       handleGoogleSignIn().then(result => {
        // setUser(result.user)
       history.push(redirect_url)
     })
   }
-console.log(user)
   const handleEmail = e => setEmail(e.target.value)
   const handlePassword = e => setPassword(e.target.value)
 
@@ -85,7 +87,9 @@ console.log(user)
         <hr className='h-1 bg-indigo-600 w-3/12' />
       </p>
       <button
-        onClick={() => handleGoogleLogin()}
+        onClick={() => {
+          handleGoogleLogin()
+        }}
         className='w-full shadow-xl bg-white px-3 py-2 rounded-full flex items-center justify-center'
       >
         Google Sign In

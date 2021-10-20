@@ -43,7 +43,7 @@ const Cart = ({
   return (
     <div className='container mx-auto my-10'>
       {cart}
-      {cartItems.length == 0 ? (
+      {cartItems.length === 0 ? (
         <div>
           <img
             src='https://www.nooralamkhansujon.com/images/ecommerce.png?9b6e48eb59d101335bb7130749383451'

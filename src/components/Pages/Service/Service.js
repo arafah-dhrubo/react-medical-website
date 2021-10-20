@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 const Service = ({ services, handleAddServices }) => {
   const { id } = useParams()
-  const service = services.find(item => item.id === id)
+  const service = services.filter(item => item.id == id)[0]
   return (
     <div className='container mx-auto flex flex-col justify-center my-10'>
       <img src={service.image} className='w-6/12 rounded-xl mx-auto' />

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { useHistory } from 'react-router'
 import useFirebase from '../../../hooks/useFirebase'
-import ReactNotification from 'react-notifications-component'
 
 const Register = () => {
   const history = useHistory()
